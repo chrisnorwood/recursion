@@ -1,7 +1,7 @@
 def merge_sort array
   if array.length > 1
+    # splits array in 'half'
     temp = array.each_slice((array.size/2.0).round).to_a
-    
     # recursively splits up the array down to smallest multiples
     left = merge_sort(temp[0])
     right = merge_sort(temp[1])
@@ -15,7 +15,7 @@ end
 # Helper argument that combines and sorts two arrays
 def merge left, right
   result = []
-  while not (left + right).empty?
+  until (left + right).empty?
     begin
       result << left.shift if left[0] <= right[0]
       result << right.shift if left[0] > right[0]
